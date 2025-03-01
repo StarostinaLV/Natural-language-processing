@@ -1,4 +1,4 @@
-# Natural-language-processing
+# Topic modeling and sentiment classification of review texts based on classical machine learning algorithms
 
 ## Files description
 
