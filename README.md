@@ -1,15 +1,38 @@
-# Topic modeling and sentiment classification of review texts based on classical machine learning algorithms
+##	Тематическое моделирование и классификация отзывов по тональности на основе алгоритмов классического машинного обучения
 
-## Files description
+## Задачи проекта
+Часть 1. Анализ текстов
 
+1. Посчет количества отзывов в разных городах и на разные банки.
+2. Построение гистограмы длин слов в символах и в словах.
+3. Поиск 10 самых частых:
+- слов
+- слов без стоп-слов
+- лемм
+- существительных
+4. Построение кривыех Ципфа и Хипса
+5. Необходимо ответить на следующие вопросы:
+- какое слово встречается чаще, "сотрудник" или "клиент"?
+- сколько раз встречается слова "мошенничество" и "доверие"?
+6. В поле "rating_grade" записана оценка отзыва по шкале от 1 до 5. С помощью меры tf-idf, необходимо найти ключевые слова и биграмы для положительных отзывов (с оценкой 5) и отрицательных отзывов (с оценкой 1).
+
+Часть 2. Тематическое моделирование
+1. Построение нескольких тематических моделей коллекции документов с разным числом тем. Необходимо поривести примеры понятных (интерпретируемых) тем.
+2. Поиск тем, в которых упомянуты конкретные банки (Сбербанк, ВТБ, другой банк).
+
+Часть 3. Классификация текстов
+Необходимо решить задачу бинарной классификации: различать резко отрицательные отзывы (с оценкой 1) и положительные отзывы (с оценкой 5).
+1. Составление обучающее и тестовое множество: выберите из всего набора данных N1 отзывов с оценкой 1 и N2 отзывов с оценкой 5 (значение N1 и N2 – на ваше усмотрение).
+2. Используя любой известный алгоритм классификации текстов для решения задачи для получения baseline. Далее необходимо сравнить разные варианты векторизации текста: использование только униграм, пар или троек слов или с использованием символьных n-грам.
+3. Как изменяется качество решения задачи при использовании скрытых тем в качестве признаков?
+- 1-ый вариант: tf-idf-преобразование (sklearn.feature_extraction.text.TfidfTransformer) и сингулярное разложение (оно же – латентый семантический анализ) (sklearn.decomposition.TruncatedSVD),
+- 2-ой вариант: тематические модели LDA (sklearn.decomposition.LatentDirichletAllocation).
+
+Метрики для оценки качества классификации: accuracy и F-measure.
+
+## Содержание файлов
 Topic modeling_part 1.ipynb - analysis of text reviews about banks
 
 Topic modeling_part 2.ipynb - topic models of document collections with different numbers of topics
 
 Topic modeling_part 3.ipynb - binary classification of review texts (negative and positive)
-
-Text classification.ipynb -  different approaches to binary text classification using Sklearn and Pytorch libraries
-
-Information_extraction.ipynb - compilation of dictionaries for sentiment classification; label distribution
-
-Translation_RNN&Attention.ipynb - phrases translation based on seq2seq with attention
